@@ -1,84 +1,36 @@
-# FaceCheck AI – Next.js Face API Integration
-[![GitHub Repo stars](https://img.shields.io/github/stars/ZU3AIRE/FaceCheck-AI-Next.js-Face-API-Integration?style=social)](https://github.com/ZU3AIRE/FaceCheck-AI-Next.js-Face-API-Integration/stargazers)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Overview
-FaceCheck AI is an open-source Next.js project that integrates the Azure Face API for facial recognition and analysis. This project is designed to help developers quickly set up and utilize Azure's AI-powered facial recognition capabilities using the official JavaScript SDK. Whether you're a beginner exploring AI services or a developer looking for an SDK-implemented solution, this project is a great starting point.
+## Getting Started
 
-## Features
-- Ready-to-use Azure Face API integration with JavaScript SDK
-- Face detection and recognition
-- Next.js frontend for easy interaction
-- Secure authentication using Azure Identity Client Library
-- Open-source and community-driven
+First, run the development server:
 
-## Prerequisites
-Before setting up the project, ensure you have the following:
-- **Node.js** (v16 or later)
-- **Azure Subscription**
-- **Face API Key & Endpoint** (from [Azure Portal](https://portal.azure.com))
-- **Next.js Installed**
-
-## Installation
-Follow these steps to set up the project:
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-repo/FaceCheck-AI.git
-   cd FaceCheck-AI
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Create a `.env.local` file and add your Azure credentials:
-   ```sh
-   AZURE_FACE_API_KEY=your_api_key
-   AZURE_FACE_API_ENDPOINT=your_endpoint
-   ```
-
-## Usage
-1. Start the development server:
-   ```sh
-   npm run dev
-   ```
-2. Open [http://localhost:3000](http://localhost:3000) in your browser.
-3. Upload an image or use a webcam to detect faces using Azure Face API.
-
-## Integration with Azure Face API
-This project follows Microsoft's [official JavaScript SDK tutorial](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library?tabs=windows%2Cvisual-studio&pivots=programming-language-javascript) and provides a working implementation.
-
-Example of making a Face API request:
-```javascript
-import { AzureKeyCredential } from "@azure/ai-form-recognizer";
-import { FaceClient } from "@azure/cognitiveservices-face";
-
-const endpoint = process.env.AZURE_FACE_API_ENDPOINT;
-const key = process.env.AZURE_FACE_API_KEY;
-
-const client = new FaceClient(endpoint, new AzureKeyCredential(key));
-
-async function detectFaces(imageUrl) {
-  const detectedFaces = await client.face.detectWithUrl(imageUrl, {
-    returnFaceId: true,
-    returnFaceAttributes: ["age", "gender", "emotion"],
-  });
-  console.log(detectedFaces);
-}
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Deployment
-To deploy the project on Vercel:
-```sh
-npm run build
-vercel deploy
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Contributing
-This project is open-source, and contributions are welcome! Whether you want to improve the integration, add new features, or fix bugs, feel free to submit a pull request or open an issue. Let's build together!
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## License
-This project is licensed under the MIT License, so you are free to use, modify, and share it.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
-**Author:** Zubair Jamil
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
