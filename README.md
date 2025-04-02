@@ -1,4 +1,5 @@
 # FaceCheck AI – Next.js Face API Integration
+[![GitHub Repo stars](https://img.shields.io/github/stars/ZU3AIRE/FaceCheck-AI-Next.js-Face-API-Integration?style=social)](https://github.com/ZU3AIRE/FaceCheck-AI-Next.js-Face-API-Integration/stargazers)
 
 ## Overview
 FaceCheck AI is an open-source Next.js project that integrates the Azure Face API for facial recognition and analysis. This project is designed to help developers quickly set up and utilize Azure's AI-powered facial recognition capabilities using the official JavaScript SDK. Whether you're a beginner exploring AI services or a developer looking for an SDK-implemented solution, this project is a great starting point.
